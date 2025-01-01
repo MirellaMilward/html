@@ -1,56 +1,220 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeira Dobra</title>
+    <!-- Título da página - ALTERAR -->
+    <title>Sua Empresa</title>
+
+    <!-- Importação de fontes - ALTERAR conforme sua preferência -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos básicos para a página */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset básico */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif; /* ALTERAR fonte se necessário */
         }
-        
-        /* Estilos para o cabeçalho */
+
+        /* Container principal da primeira dobra */
+        .hero-section {
+            min-height: 100vh;
+            background-color: #ffffff; /* ALTERAR cor de fundo */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Estilo do cabeçalho */
         .header {
-            background-color: #f8f9fa; /* Cor de fundo do cabeçalho */
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Estilos para a barra azul com ícones */
-        .barra-azul {
-            background-color: #007bff; /* Cor de fundo azul */
-            padding: 10px;
+            padding: 20px 5%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+            position: fixed;
+            width: 100%;
+            background: transparent;
+            z-index: 1000;
         }
 
-        /* Estilos para os ícones na barra azul */
-        .barra-azul .icone {
-            color: white; /* Cor dos ícones */
-            font-size: 24px; /* Tamanho dos ícones */
+        /* Logo - ALTERAR dimensões conforme sua logo */
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Menu de navegação */
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #333333; /* ALTERAR cor do texto do menu */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Conteúdo principal da primeira dobra */
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 5% 0;
+            height: calc(100vh - 100px);
+        }
+
+        /* Coluna de texto */
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-title {
+            font-size: 48px; /* ALTERAR tamanho do título */
+            color: #333333; /* ALTERAR cor do título */
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 18px; /* ALTERAR tamanho do texto */
+            color: #666666; /* ALTERAR cor do texto */
+            margin-bottom: 30px;
+        }
+
+        /* Botão CTA */
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #007bff; /* ALTERAR cor do botão */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Coluna da imagem */
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Faixa azul com ícones em movimento */
+        .moving-icons-banner {
+            background-color: #007bff; /* ALTERAR cor da faixa */
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icons-container {
+            display: flex;
+            gap: 50px;
+            animation: scrollIcons 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .icon-item {
+            display: flex;
+            align-items: center;
+            color: white;
+            gap: 10px;
+        }
+
+        .icon-item img {
+            width: 30px; /* ALTERAR tamanho dos ícones */
+            height: 30px;
+        }
+
+        @keyframes scrollIcons {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Responsividade - Ajuste conforme necessário */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 80px;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .nav-menu {
+                display: none; /* Adicione um menu mobile conforme necessidade */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Seção principal da primeira dobra -->
+    <section class="hero-section">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <!-- ALTERAR src da logo -->
+            <img src="caminho-para-sua-logo.png" alt="Logo da Empresa" class="logo">
+            
+            <!-- Menu de navegação - ALTERAR itens conforme necessidade -->
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Sobre</a>
+                <a href="#" class="nav-link">Serviços</a>
+                <a href="#" class="nav-link">Contato</a>
+            </nav>
+        </header>
 
-    <!-- Cabeçalho da página -->
-    <header class="header">
-        <h1>Bem-vindo à Primeira Dobra</h1>
-        <p>Este é um exemplo de cabeçalho da página.</p>
-    </header>
+        <!-- Conteúdo principal -->
+        <div class="hero-content">
+            <!-- Coluna de texto -->
+            <div class="hero-text">
+                <!-- ALTERAR textos -->
+                <h1 class="hero-title">Título Principal da Sua Empresa</h1>
+                <p class="hero-description">Descrição impactante do seu produto ou serviço. Destaque os principais benefícios e diferenciais.</p>
+                <button class="cta-button">Comece Agora</button>
+            </div>
 
-    <!-- Barra azul com ícones -->
-    <div class="barra-azul">
-        <span class="icone">&#9733;</span> <!-- Ícone 1 -->
-        <span class="icone">&#9733;</span> <!-- Ícone 2 -->
-        <span class="icone">&#9733;</span> <!-- Ícone 3 -->
-    </div>
+            <!-- Coluna da imagem -->
+            <div class="hero-image">
+                <!-- ALTERAR src da imagem -->
+                <img src="caminho-para-sua-imagem.png" alt="Imagem Principal">
+            </div>
+        </div>
 
-    <!-- Conteúdo adicional da página iria aqui -->
-
+        <!-- Faixa com ícones em movimento -->
+        <div class="moving-icons-banner">
+            <div class="icons-container">
+                <!-- ALTERAR/DUPLICAR ícones conforme necessidade -->
+                <div class="icon-item">
+                    <img src="caminho-para-icone1.png" alt="Ícone 1">
+                    <span>Texto do Ícone 1</span>
+                </div>
+                <div class="icon-item">
+                    <img src="caminho-para-icone2.png" alt="Ícone 2">
+                    <span>Texto do Ícone 2</span>
+                </div>
+                <div class="icon-item">
+                    <img src="caminho-para-icone3.png" alt="Ícone 3">
+                    <span>Texto do Ícone 3</span>
+                </div>
+                <!-- Duplicar ícones para criar efeito de loop contínuo -->
+                <!-- ... -->
+            </div>
+        </div>
+    </section>
 </body>
 </html>
